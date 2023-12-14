@@ -9,6 +9,7 @@ public class ListService : IListService
 {
     private readonly IFileService _fileService;
     private List<IContact> contactList;
+    private readonly string filePath = @"C:\Programmering\EC\CSHARP-COURSE\Adressbok\Contacts.json";
 
     public ListService (IFileService fileService)
     {
@@ -30,7 +31,7 @@ public class ListService : IListService
                 _fileService.SaveContentToFile(JsonConvert.SerializeObject(contactList, new JsonSerializerSettings
                 {
                     TypeNameHandling = TypeNameHandling.Objects,
-                }));
+                }), filePath);
                 return true;
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
@@ -50,7 +51,7 @@ public class ListService : IListService
     {
         try
         {
-            var content = _fileService.GetContentFromFile();
+            var content = _fileService.GetContentFromFile(filePath);
             if (!string.IsNullOrEmpty(content))
             {
                 contactList = JsonConvert.DeserializeObject<List<IContact>>(content, new JsonSerializerSettings
@@ -98,7 +99,7 @@ public class ListService : IListService
                 _fileService.SaveContentToFile(JsonConvert.SerializeObject(contactList, new JsonSerializerSettings
                 {
                     TypeNameHandling = TypeNameHandling.Objects,
-                }));
+                }), filePath);
                 return true;
             }
             return false;

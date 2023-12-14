@@ -3,6 +3,6 @@
 public interface IFileService
 {
     // Se kommentarer i service.
-    public bool SaveContentToFile(string content);
-    public string GetContentFromFile();
+    public bool SaveContentToFile(string content, string filePath);
+    public string GetContentFromFile(string filePath);
 }
