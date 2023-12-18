@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Adressbok\Adressbok.csproj" />
+    <ProjectReference Include="..\Adressbok.ClassLibrary\Adressbok.ClassLibrary.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Adressbok.Interfaces;
-using Adressbok.Models;
+using Adressbok.ClassLibrary.Interfaces;
+using Adressbok.ClassLibrary.Models;
 using System.Text.RegularExpressions;
 
 namespace Adressbok.Services;
@@ -15,9 +16,8 @@ public class MenuService(IListService listService, IContactService contactServic
     /// </summary>
     public void ShowMainMenu()
     {
-        var addressbook = true;
 
-        while(addressbook)
+        while(true)
         {
             Console.Clear();
             Console.WriteLine("### ADRESSBOK ###\n");
@@ -50,7 +50,7 @@ public class MenuService(IListService listService, IContactService contactServic
                     break;
 
                 case "0":
-                    addressbook = false;
+                    Environment.Exit(0);
                     break;
 
                 default:

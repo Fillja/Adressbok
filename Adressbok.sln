@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adressbok", "Adressbok\Adressbok.csproj", "{584B0517-4265-4ED5-AC41-027ED35E2F2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adressbok.Tests", "Adressbok.Tests\Adressbok.Tests.csproj", "{A0F50B73-7392-43AD-AD4F-3BDC08203894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adressbok.Tests", "Adressbok.Tests\Adressbok.Tests.csproj", "{A0F50B73-7392-43AD-AD4F-3BDC08203894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adressbok.ClassLibrary", "Adressbok.ClassLibrary\Adressbok.ClassLibrary.csproj", "{B8693873-BFB0-437B-B397-AEF6DA390CC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A0F50B73-7392-43AD-AD4F-3BDC08203894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0F50B73-7392-43AD-AD4F-3BDC08203894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0F50B73-7392-43AD-AD4F-3BDC08203894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8693873-BFB0-437B-B397-AEF6DA390CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8693873-BFB0-437B-B397-AEF6DA390CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8693873-BFB0-437B-B397-AEF6DA390CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8693873-BFB0-437B-B397-AEF6DA390CC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
-﻿using Adressbok.Interfaces;
+﻿using Adressbok.ClassLibrary.Interfaces;
 using System.Diagnostics;
 
-namespace Adressbok.Services;
+namespace Adressbok.ClassLibrary.Services;
 
 public class FileService : IFileService
 {

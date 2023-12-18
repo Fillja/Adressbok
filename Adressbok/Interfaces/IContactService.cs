@@ -1,4 +1,5 @@
 ﻿namespace Adressbok.Interfaces;
+using Adressbok.ClassLibrary.Interfaces;
 
 public interface IContactService
 {

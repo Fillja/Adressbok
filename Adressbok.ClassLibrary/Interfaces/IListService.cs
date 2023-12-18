@@ -1,4 +1,4 @@
-﻿namespace Adressbok.Interfaces;
+﻿namespace Adressbok.ClassLibrary.Interfaces;
 
 public interface IListService
 {

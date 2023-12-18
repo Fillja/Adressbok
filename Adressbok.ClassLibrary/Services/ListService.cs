@@ -1,9 +1,8 @@
-﻿using Adressbok.Interfaces;
-using Adressbok.Models;
+﻿using Adressbok.ClassLibrary.Interfaces;
 using Newtonsoft.Json;
 using System.Diagnostics;
 
-namespace Adressbok.Services;
+namespace Adressbok.ClassLibrary.Services;
 
 public class ListService : IListService
 {

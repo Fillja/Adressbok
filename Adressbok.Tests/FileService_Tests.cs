@@ -1,5 +1,5 @@
-﻿using Adressbok.Interfaces;
-using Adressbok.Services;
+﻿using Adressbok.ClassLibrary.Interfaces;
+using Adressbok.ClassLibrary.Services;
 
 namespace Adressbok.Tests;
 

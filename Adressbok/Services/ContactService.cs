@@ -1,5 +1,5 @@
 ﻿using Adressbok.Interfaces;
-using Adressbok.Models;
+using Adressbok.ClassLibrary.Interfaces;
 using System.Text.RegularExpressions;
 
 namespace Adressbok.Services;

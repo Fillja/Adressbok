@@ -1,6 +1,6 @@
-﻿using Adressbok.Interfaces;
+﻿using Adressbok.ClassLibrary.Interfaces;
 
-namespace Adressbok.Models;
+namespace Adressbok.ClassLibrary.Models;
 
 public class Contact : IContact
 {
