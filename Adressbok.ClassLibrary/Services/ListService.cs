@@ -9,6 +9,8 @@ public class ListService : IListService
     private readonly IFileService _fileService;
     private List<IContact> contactList;
     private readonly string filePath = @"C:\Programmering\EC\CSHARP-COURSE\Adressbok\Contacts.json";
+    //Event handler för Maui uppdatering av gränssnitt, listener ligger i vardera metod som behöver det.
+    public event EventHandler? ContactListUpdated;
 
     public ListService (IFileService fileService)
     {
@@ -31,6 +33,7 @@ public class ListService : IListService
                 {
                     TypeNameHandling = TypeNameHandling.Objects,
                 }), filePath);
+                ContactListUpdated?.Invoke(this, EventArgs.Empty);
                 return true;
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
@@ -99,6 +102,7 @@ public class ListService : IListService
                 {
                     TypeNameHandling = TypeNameHandling.Objects,
                 }), filePath);
+                ContactListUpdated?.Invoke(this, EventArgs.Empty);
                 return true;
             }
             return false;
