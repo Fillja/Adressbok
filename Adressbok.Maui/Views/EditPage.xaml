@@ -33,7 +33,7 @@
 
         <HorizontalStackLayout>
             <Button Grid.Column="0" Text="Save" CommandParameter="{Binding Contact}" Command="{Binding EditCommand}" Margin="0,0,20,0"/>
-            <Button Grid.Column="1" Text="Return" />
+            <Button Grid.Column="1" Text="Return" Command="{Binding GoBackCommand}"/>
         </HorizontalStackLayout>
         
     </VerticalStackLayout>

@@ -10,4 +10,5 @@ public interface IListService
     public IContact GetSpecificContactFromList(int ID);
     IEnumerable<IContact> GetAllContactsFromList();
     public bool RemoveContactFromList(string email);
+    public bool UpdateContactInList(IContact Contact);
 }

@@ -9,6 +9,7 @@ public class ListService : IListService
     private readonly IFileService _fileService;
     private List<IContact> contactList;
     private readonly string filePath = @"C:\Programmering\EC\CSHARP-COURSE\Adressbok\Contacts.json";
+
     //Event handler för Maui uppdatering av gränssnitt, listener ligger i vardera metod som behöver det.
     public event EventHandler? ContactListUpdated;
 
@@ -83,7 +84,6 @@ public class ListService : IListService
         return contact ??= null!;
     }
 
-
     /// <summary>
     /// Metod som använder mottagen string "email" och letar upp önskad kontakt i contactList. 
     /// Efter validering plockas kontakt med motsvarande email bort från listan, och listan sparas med hjälp av SaveContentToFile() från FileService.
@@ -98,6 +98,34 @@ public class ListService : IListService
             if (contact != null!)
             {
                 contactList.Remove(contact);
+                _fileService.SaveContentToFile(JsonConvert.SerializeObject(contactList, new JsonSerializerSettings
+                {
+                    TypeNameHandling = TypeNameHandling.Objects,
+                }), filePath);
+                ContactListUpdated?.Invoke(this, EventArgs.Empty);
+                return true;
+            }
+            return false;
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return false;
+    }
+
+    /// <summary>
+    /// Metod som tar emot en Contact av typen IContact och kontrollerar att den stämmer överens med önskad kontakt i listan.
+    /// Om kontakten ej är null så uppdateras kontakten till den nya som mottagits av anvädaren.
+    /// Sparas sedan till fil med hjälp av SaveContentToFile()
+    /// </summary>
+    /// <param name="Contact">Tar emot en kontakt av typen IContact som ska uppdateras.</param>
+    /// <returns>Returnerar true vid lyckad uppdatering, returnerar false om null eller misslyckat.</returns>
+    public bool UpdateContactInList(IContact Contact)
+    {
+        try
+        {
+            var updatedContact = contactList.FirstOrDefault(x => x.Email == Contact.Email);
+            if (updatedContact != null!)
+            {
+                updatedContact = Contact;
                 _fileService.SaveContentToFile(JsonConvert.SerializeObject(contactList, new JsonSerializerSettings
                 {
                     TypeNameHandling = TypeNameHandling.Objects,

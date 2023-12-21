@@ -4,6 +4,9 @@ namespace Adressbok.Maui
 {
     public partial class AppShell : Shell
     {
+        /// <summary>
+        /// Routes som hanterar navigering mellan mina pages.
+        /// </summary>
         public AppShell()
         {
             InitializeComponent();

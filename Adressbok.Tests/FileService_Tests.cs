@@ -34,4 +34,32 @@ public class FileService_Tests
         // Assert
         Assert.False(result);
     }
+
+    [Fact]
+    public void GetContentFromFileShould_ReadAndGetContent_ThenReturnStringContent()
+    {
+        // Arrange
+        IFileService _fileService = new FileService();
+        string filePath = @"C:\Programmering\EC\CSHARP-COURSE\Adressbok\Test.txt";
+
+        // Act
+        string result = _fileService.GetContentFromFile(filePath);
+
+        // Assert
+        Assert.NotNull(result);
+    }
+
+    [Fact]
+    public void GetContentFromFileShould_ReturnNull_IfFileDoesNotExist()
+    {
+        // Arrange
+        IFileService _fileService = new FileService();
+        string filePath = @"C:\Programmering\asdqwe456/456qweasd/Test.txt";
+
+        // Act
+        string result = _fileService.GetContentFromFile(filePath);
+
+        // Assert
+        Assert.Null(result);
+    }
 }

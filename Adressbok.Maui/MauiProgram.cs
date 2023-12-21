@@ -8,6 +8,9 @@ namespace Adressbok.Maui
 {
     public static class MauiProgram
     {
+        /// <summary>
+        /// Dependency Injection för alla mina models och services/interfaces som finns i ClassLibrary.
+        /// </summary>
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();

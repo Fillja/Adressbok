@@ -31,7 +31,11 @@
         <Label Text="Postal Code" />
         <Entry Text="{Binding Contact.PostalCode}" Margin="0,0,0,20"/>
 
-        <Button Text="Save" CommandParameter="{Binding Contact}" Command="{Binding AddCommand}" />
+        <HorizontalStackLayout>
+            <Button Text="Save" CommandParameter="{Binding Contact}" Command="{Binding AddCommand}" Margin="0,0,20,0"/>
+            <Button Grid.Column="1" Text="Return" Command="{Binding GoBackCommand}"/>
+        </HorizontalStackLayout>
+        
             
     </VerticalStackLayout>
 

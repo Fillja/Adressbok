@@ -5,6 +5,9 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace Adressbok.Maui.Viewmodels;
 
+/// <summary>
+/// Viewmodel för Mainpage som hanterar visning av adressboken och navigering till andra pages.
+/// </summary>
 public partial class MainViewModel : ObservableObject
 {
     private readonly IListService _listService;
@@ -19,6 +22,9 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private ObservableCollection<IContact> _contactList;
 
+    /// <summary>
+    /// Metod för att uppdatera gränssnitt när Eventhandler i Listservice har flaggat.
+    /// </summary>
     private void UpdateContactList()
     {
         _listService.ContactListUpdated += (object? sender, EventArgs e) =>
@@ -27,12 +33,19 @@ public partial class MainViewModel : ObservableObject
         };
     }
 
+    /// <summary>
+    /// Metod för navigering till Add Page.
+    /// </summary>
     [RelayCommand]
     public async Task NavigateToAddAsync()
     {
         await Shell.Current.GoToAsync("AddPage");
     }
 
+    /// <summary>
+    /// Metod för navigering till Edit Page.
+    /// <param name="contact">Skickar med Contact för att kunna uppdatera den.</param>
+    /// </summary>
     [RelayCommand]
     public async Task NavigateToEditAsync(IContact contact)
     {
@@ -43,6 +56,10 @@ public partial class MainViewModel : ObservableObject
         await Shell.Current.GoToAsync("EditPage", parameters);
     }
 
+    /// <summary>
+    /// Metod för att ta bort kontakt från listan, använder RemoveContactFromList() från ListService
+    /// </summary>
+    /// <param name="Contact">Tar emot kontakten som ska plockas bort.</param>
     [RelayCommand]
     public void Remove(IContact Contact)
     {
